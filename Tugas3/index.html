@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Biodata Diri</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <fieldset>
+      <legend>Data Diri</legend>
+      <form id="biodataForm">
+        <label for="namaDepan">Nama Depan</label>
+        <input type="text" id="namaDepan" placeholder="Nama Depan" /><br />
+
+        <label for="namaBelakang">Nama Belakang </label>
+        <input type="text" id="namaBelakang" placeholder="Nama Belakang"/><br />
+
+        <label for="hobi">Hobi</label>
+        <select id="hobi">
+          <option value="">Pilih Hobi</option>
+          <option value="Hiking">Hiking</option>
+          <option value="Sepak Bola">Sepak Bola</option>
+          <option value="renang">renang</option></select><br/>
+
+        <label for="jenisKelamin">Jenis Kelamin</label>
+        <select id="jenisKelamin">
+          <option value="">Pilih Jenis Kelamin</option>
+          <option value="laki-laki">Laki-laki</option>
+          <option value="perempuan">Perempuan</option></select><br/>
+
+        <label for="email">Email </label>
+        <input type="email" id="email" placeholder="Email" /><br/>
+
+        <label for="alamat">Alamat </label>
+        <textarea id="alamat" placeholder="Alamat"></textarea><br/>
+
+        <label for="handphone">No.Handphone </label>
+        <input type="text" id="handphone" placeholder="Nomor Handphone" /><br/>
+
+        <button type="submit">Submit</button>
+      </form>
+    </fieldset>
+
+    <div class="popup-container" id="popupContainer">
+      <div class="popup">
+        <h3>This page says</h3>
+        <p>Biodata berhasil disimpan!</p>
+        <button class="popup-button" id="okButton">OK</button>
+      </div>
+    </div>
+
+    <script>
+      const form = document.getElementById("biodataForm");
+      const popupContainer = document.getElementById("popupContainer");
+      const okButton = document.getElementById("okButton");
+
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+        popupContainer.style.display = "flex";});
+
+      okButton.addEventListener("click", function () {
+      popupContainer.style.display = "none";});
+    </script>
+  </body>
+</html>
